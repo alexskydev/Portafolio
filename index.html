@@ -25,7 +25,82 @@
 </head>
 <body>
 	
-	<section class="intro-section">
+	<!-- Loader -->
+	<div id="loader" class="loader">
+		<div class="loader-spinner">
+			<div class="spinner-ring"></div>
+			<div class="spinner-icon-container">
+				<div class="spinner-icon active" data-icon="0">
+					<i class="ion-code"></i>
+				</div>
+				<div class="spinner-icon" data-icon="1">
+					<i class="ion-paintbrush"></i>
+				</div>
+				<div class="spinner-icon" data-icon="2">
+					<i class="ion-android-phone-portrait"></i>
+				</div>
+				<div class="spinner-icon" data-icon="3">
+					<i class="ion-monitor"></i>
+				</div>
+				<div class="spinner-icon" data-icon="4">
+					<i class="ion-gear-a"></i>
+				</div>
+				<div class="spinner-icon" data-icon="5">
+					<i class="ion-cloud"></i>
+				</div>
+				<div class="spinner-icon" data-icon="6">
+					<i class="ion-folder"></i>
+				</div>
+				<div class="spinner-icon" data-icon="7">
+					<i class="ion-lightbulb"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Dark Mode Toggle -->
+	<div class="dark-mode-toggle">
+		<button id="darkModeToggle" class="toggle-btn">
+			<i class="ion-ios-sunny"></i>
+		</button>
+	</div>
+	
+	<!-- Mobile Menu Button -->
+	<button class="mobile-menu-btn" id="mobileMenuBtn">
+		<span class="hamburger-line"></span>
+		<span class="hamburger-line"></span>
+		<span class="hamburger-line"></span>
+	</button>
+	
+	<!-- Mobile Navigation Overlay -->
+	<div class="mobile-nav-overlay" id="mobileNavOverlay">
+		<nav class="mobile-nav">
+			<ul class="mobile-nav-list">
+				<li><a href="#intro" class="mobile-nav-link" data-section="intro">Inicio</a></li>
+				<li><a href="#about" class="mobile-nav-link" data-section="about">Sobre mí</a></li>
+				<li><a href="#skills" class="mobile-nav-link" data-section="skills">Habilidades</a></li>
+				<li><a href="#experience" class="mobile-nav-link" data-section="experience">Experiencia</a></li>
+				<li><a href="#portfolio" class="mobile-nav-link" data-section="portfolio">Portafolio</a></li>
+				<li><a href="#education" class="mobile-nav-link" data-section="education">Educación</a></li>
+				<li><a href="#contact" class="mobile-nav-link" data-section="contact">Contáctame</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<!-- Floating Navigation (Desktop) -->
+	<nav class="floating-nav desktop-nav">
+		<ul class="nav-list">
+			<li><a href="#intro" class="nav-link active" data-section="intro">Inicio</a></li>
+			<li><a href="#about" class="nav-link" data-section="about">Sobre mí</a></li>
+			<li><a href="#skills" class="nav-link" data-section="skills">Habilidades</a></li>
+			<li><a href="#experience" class="nav-link" data-section="experience">Experiencia</a></li>
+			<li><a href="#portfolio" class="nav-link" data-section="portfolio">Portafolio</a></li>
+			<li><a href="#education" class="nav-link" data-section="education">Educación</a></li>
+			<li><a href="#contact" class="nav-link" data-section="contact">Contáctame</a></li>
+		</ul>
+	</nav>
+	
+	<section id="intro" class="intro-section">
 		<div class="container">
 		
 			<div class="heading-wrapper">
@@ -81,14 +156,14 @@
 							<h4 class="font-yellow typing-effect"></h4>
 							<br>
 							<ul class="information margin-tb-30">
-								<li><b class="font-yellow">EXPERIENCIA</b> : +3 Años</li>
+								<li><b class="font-yellow">EXPERIENCIA</b> : +5 Años</li>
 							</ul>
 							<br>
 							<ul class="social-icons">
-								<li><a target="_blank" href="https://github.com/alexdevjr"><i class="ion-social-github"></i></a></li>
-								<li><a target="_blank" href="https://www.facebook.com/alexdevjr/"><i class="ion-social-facebook"></i></a></li>
-								<li><a target="_blank" href="https://www.linkedin.com/in/alexdevjr/"><i class="ion-social-linkedin"></i></a></li>
-								<li><a target="_blank" href="https://www.instagram.com/alexdevjr/"><i class="ion-social-instagram"></i></a></li>
+								<li><a target="_blank" href="https://www.linkedin.com/in/alexskydev/"><i class="ion-social-linkedin"></i></a></li>
+								<li><a target="_blank" href="https://www.instagram.com/alexskydev/"><i class="ion-social-instagram"></i></a></li>
+								<li><a target="_blank" href="https://www.facebook.com/alexskydev/"><i class="ion-social-facebook"></i></a></li>
+								<li><a target="_blank" href="https://github.com/alexskydev"><i class="ion-social-github"></i></a></li>							
 							</ul>
 					</div><!-- col-sm-8 -->
 					
@@ -103,7 +178,7 @@
 	</section><!-- intro-section -->
 	
 	
-	<section class="about-section section">
+	<section id="about" class="about-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
@@ -122,7 +197,7 @@
 		</div><!-- container -->
 	</section><!-- about-section -->
 
-	<section class="about-section section">
+	<section id="skills" class="about-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
@@ -211,7 +286,7 @@
 		</div><!-- container -->
 	</section><!-- about-section -->
 	
-	<section class="experience-section section">
+	<section id="experience" class="experience-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
@@ -234,7 +309,7 @@
 						<h6 class="font-lite-black margin-t-10">Octubre 2022 - Actualidad</h6>
 						
 						<ul class="list">
-							<li>LOS ÁNGELES - CALIFORNIA | En remoto</li>
+							<li>SAN FRANCISCO - CALIFORNIA | En remoto</li>
 						</ul>
 					</div>
 
@@ -287,7 +362,7 @@
 						<a href="https://emtelco.com.co/" 
 						onclick="window.open('https://emtelco.com.co/');"
 						data-fluidbox>
-						<img src="https://emtelco.com.co/wp-content/themes/emtelco/img/Logo.png" alt="" style="width: 9rem;"></a>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Logo_Emtelco.png" alt="" style="width: 9rem;"></a>
 						<br>
 						<br>
 						<h5 class="font-yellow"><b>SOPORTE TÉCNICO</b></h5>
@@ -316,7 +391,7 @@
 		</div><!-- container -->
 	</section><!-- quoto-section -->
 	
-	<section class="portfolio-section section">
+	<section id="portfolio" class="portfolio-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
@@ -364,7 +439,7 @@
 	</section><!-- portfolio-section -->
 	
 	
-	<section class="education-section section">
+	<section id="education" class="education-section section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
@@ -506,6 +581,63 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</section><!-- education-section -->
+	
+	<!-- Contact Section -->
+	<section id="contact" class="contact-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<div class="heading">
+						<h3><b>Contáctame</b></h3>
+						<h6 class="font-lite-black"><b>¿Tienes un proyecto en mente? ¡Hablemos!</b></h6>
+					</div>
+				</div><!-- col-sm-3 -->
+				
+				<div class="col-sm-12 col-md-9">
+					<div class="contact-content">
+						<!-- Quick Contact Section -->
+						<div class="quick-contact-section">
+							<div class="quick-header">
+								<h4>💬 Contáctame directamente</h4>
+								<p>Elige tu método preferido de comunicación</p>
+							</div>
+							
+							<div class="quick-buttons">
+								<a href="mailto:alexjw2009@outlook.com?subject=Hola%20desde%20tu%20portafolio&body=Hola%20Alex,%20me%20interesa%20tu%20trabajo..." class="quick-btn email-btn">
+									<div class="quick-icon">
+										<i class="ion-email"></i>
+									</div>
+									<div class="quick-content">
+										<h5>Email</h5>
+									</div>
+								</a>
+								
+								<a href="https://wa.me/573013739383?text=Hola%20Alex,%20vi%20tu%20portafolio%20y%20me%20interesa%20tu%20trabajo..." class="quick-btn whatsapp-btn" target="_blank">
+									<div class="quick-icon">
+										<i class="ion-social-whatsapp"></i>
+									</div>
+									<div class="quick-content">
+										<h5>WhatsApp</h5>
+									</div>
+								</a>
+							</div>
+							
+							<!-- Redes Sociales -->
+							<div class="social-section">
+								<h5>📱 Sígueme en redes sociales</h5>
+								<ul class="social-icons">
+									<li><a target="_blank" href="https://www.linkedin.com/in/alexskydev/"><i class="ion-social-linkedin"></i></a></li>
+									<li><a target="_blank" href="https://www.instagram.com/alexskydev/"><i class="ion-social-instagram"></i></a></li>
+									<li><a target="_blank" href="https://www.facebook.com/alexskydev/"><i class="ion-social-facebook"></i></a></li>
+									<li><a target="_blank" href="https://github.com/alexskydev"><i class="ion-social-github"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div><!-- col-sm-9 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- contact-section -->
 	
 	<footer>
 		<p class="copyright">
