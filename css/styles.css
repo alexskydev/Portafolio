@@ -606,12 +606,14 @@ b.max-bold{ font-weight: 700; }
 .experience img {
   transition: var(--transition);
   border-radius: 8px;
-  box-shadow: var(--shadow-light);
+  box-shadow: none;
+  border: none;
 }
 
 .experience:hover img {
   transform: scale(1.05);
-  box-shadow: var(--shadow-medium);
+  box-shadow: none;
+  border: none;
 }
 
 .experience .list > li{ 
@@ -1801,12 +1803,14 @@ CONTACT SECTION - SIMPLE
   background: linear-gradient(135deg, #C81CDE, #A813B7);
   color: white;
   border-color: rgba(200, 28, 222, 0.3);
+  box-shadow: 0 15px 35px rgba(200, 28, 222, 0.3);
 }
 
 .whatsapp-btn:hover {
   background: linear-gradient(135deg, #25D366, #128C7E);
   color: white;
   border-color: rgba(37, 211, 102, 0.3);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
 }
 
 .quick-icon {
@@ -1828,6 +1832,12 @@ CONTACT SECTION - SIMPLE
 .whatsapp-btn .quick-icon {
   background: linear-gradient(135deg, #25D366, #128C7E);
   color: white;
+}
+
+.email-btn:hover .quick-icon,
+.whatsapp-btn:hover .quick-icon {
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .quick-icon i {
