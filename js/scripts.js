@@ -267,36 +267,50 @@ function initializeScrollEffects() {
 // Parallax function removed completely
 
 // Enhanced typing effect with more options
-function enhancedTypingEffect() {
-	const introTexts = [
-		"Hola, soy:",
-		"Alexander Narváez"
+var typingGeneration = 0;
+
+function enhancedTypingEffect(options) {
+	options = options || {};
+	var introTexts = [
+		options.hello || "Hola, soy:",
+		options.name || "Alexander Narváez"
 	];
-	const typingTexts = [
+	var typingTexts = options.roles || [
 		"Software Developer",
-		"Web Developer", 
+		"Web Developer",
 		"Full Stack Developer",
 		"UI/UX Designer",
 		"Mobile App Developer"
 	];
 	
-	const introElements = [
+	var introElements = [
 		document.querySelector(".intro-text-1"),
 		document.querySelector(".intro-text-2")
 	];
-	const typingElement = document.querySelector(".typing-effect");
+	var typingElement = document.querySelector(".typing-effect");
 	
 	if (!introElements[0] || !introElements[1] || !typingElement) return;
+
+	var generation = ++typingGeneration;
 	
-	let introIndex = 0;
-	let introCharIndex = 0;
-	let typingIndex = 0;
-	let typingCharIndex = 0;
-	let isDeleting = false;
+	introElements[0].textContent = "";
+	introElements[1].textContent = "";
+	typingElement.textContent = "";
+	introElements[0].classList.remove("typed", "typing-effect");
+	introElements[1].classList.remove("typed", "typing-effect");
+	typingElement.classList.remove("typed");
+	
+	var introIndex = 0;
+	var introCharIndex = 0;
+	var typingIndex = 0;
+	var typingCharIndex = 0;
+	var isDeleting = false;
 
 	function typeIntro() {
-		const currentText = introTexts[introIndex];
-		const currentElement = introElements[introIndex];
+		if (generation !== typingGeneration) return;
+
+		var currentText = introTexts[introIndex];
+		var currentElement = introElements[introIndex];
 		
 		if (introCharIndex < currentText.length) {
 			currentElement.textContent += currentText.charAt(introCharIndex);
@@ -317,7 +331,9 @@ function enhancedTypingEffect() {
 	}
 
 	function type() {
-		const currentText = typingTexts[typingIndex];
+		if (generation !== typingGeneration) return;
+
+		var currentText = typingTexts[typingIndex];
 		typingElement.style.minHeight = typingElement.offsetHeight + "px";
 		
 		if (isDeleting) {
@@ -332,7 +348,8 @@ function enhancedTypingEffect() {
 			typingCharIndex++;
 			if (typingCharIndex === currentText.length) {
 				isDeleting = true;
-				setTimeout(() => {
+				setTimeout(function () {
+					if (generation !== typingGeneration) return;
 					typingElement.classList.remove("typed");
 				}, 2000);
 			}
@@ -340,13 +357,20 @@ function enhancedTypingEffect() {
 		setTimeout(type, isDeleting ? 100 : 150);
 	}
 
-	// Start typing effect after a delay
-	setTimeout(typeIntro, 1000);
+	setTimeout(typeIntro, options.immediate ? 0 : 1000);
 }
 
-// Initialize enhanced typing effect
+window.restartTypingEffect = function (options) {
+	options = options || {};
+	options.immediate = true;
+	enhancedTypingEffect(options);
+};
+
+// Typing starts from i18n after language is applied
 document.addEventListener("DOMContentLoaded", function() {
-	enhancedTypingEffect();
+	if (!window.I18n) {
+		enhancedTypingEffect();
+	}
 });
 
 // Add hover effects to portfolio items
@@ -427,19 +451,56 @@ $(document).ready(function() {
 	initializeDarkMode();
 });
 
+// Shared scroll-spy helpers (fixes last section / contact active state)
+function getCurrentSectionId() {
+	const sections = document.querySelectorAll('section[id]');
+	if (!sections.length) return '';
+
+	const scrollPosition = window.scrollY + 120;
+	const docHeight = document.documentElement.scrollHeight;
+	const nearBottom = window.innerHeight + window.scrollY >= docHeight - 150;
+
+	// Contact is short; near page bottom always highlight the last section
+	if (nearBottom) {
+		return sections[sections.length - 1].getAttribute('id');
+	}
+
+	let current = sections[0].getAttribute('id');
+	sections.forEach(function (section) {
+		if (scrollPosition >= section.offsetTop) {
+			current = section.getAttribute('id');
+		}
+	});
+
+	return current;
+}
+
+function setActiveNavBySection(sectionId) {
+	document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(function (link) {
+		link.classList.remove('active');
+		if (link.getAttribute('data-section') === sectionId) {
+			link.classList.add('active');
+		}
+	});
+}
+
+function updateActiveNavLinks() {
+	setActiveNavBySection(getCurrentSectionId());
+}
+
 // Floating Navigation Functionality
 function initializeFloatingNav() {
 	const navLinks = document.querySelectorAll('.nav-link');
-	const sections = document.querySelectorAll('section[id]');
 	
 	// Smooth scroll for navigation links
-	navLinks.forEach(link => {
-		link.addEventListener('click', function(e) {
+	navLinks.forEach(function (link) {
+		link.addEventListener('click', function (e) {
 			e.preventDefault();
 			const targetId = this.getAttribute('href').substring(1);
 			const targetSection = document.getElementById(targetId);
 			
 			if (targetSection) {
+				setActiveNavBySection(targetId);
 				const offsetTop = targetSection.offsetTop - 80;
 				window.scrollTo({
 					top: offsetTop,
@@ -449,27 +510,8 @@ function initializeFloatingNav() {
 		});
 	});
 	
-	// Update active navigation link on scroll
-	window.addEventListener('scroll', function() {
-		let current = '';
-		const scrollPosition = window.scrollY + 100;
-		
-		sections.forEach(section => {
-			const sectionTop = section.offsetTop;
-			const sectionHeight = section.offsetHeight;
-			
-			if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-				current = section.getAttribute('id');
-			}
-		});
-		
-		navLinks.forEach(link => {
-			link.classList.remove('active');
-			if (link.getAttribute('data-section') === current) {
-				link.classList.add('active');
-			}
-		});
-	});
+	window.addEventListener('scroll', updateActiveNavLinks);
+	updateActiveNavLinks();
 }
 
 // Initialize floating navigation when document is ready
@@ -580,15 +622,15 @@ function initializeMobileMenu() {
 	});
 	
 	// Close menu when clicking on nav links
-	mobileNavLinks.forEach(link => {
-		link.addEventListener('click', function(e) {
+	mobileNavLinks.forEach(function (link) {
+		link.addEventListener('click', function (e) {
 			e.preventDefault();
 			
-			// Get target section and scroll to it
 			const targetId = this.getAttribute('href').substring(1);
 			const targetSection = document.getElementById(targetId);
 			
 			if (targetSection) {
+				setActiveNavBySection(targetId);
 				const offsetTop = targetSection.offsetTop - 80;
 				window.scrollTo({
 					top: offsetTop,
@@ -596,7 +638,6 @@ function initializeMobileMenu() {
 				});
 			}
 			
-			// Close menu after navigation
 			closeMobileMenu();
 		});
 	});
@@ -609,36 +650,14 @@ function initializeMobileMenu() {
 	}
 	
 	// Close menu on escape key
-	document.addEventListener('keydown', function(e) {
+	document.addEventListener('keydown', function (e) {
 		if (e.key === 'Escape' && mobileNavOverlay.classList.contains('active')) {
 			closeMobileMenu();
 		}
 	});
 	
-	// Function to update mobile menu active state based on current section
 	function updateMobileMenuActiveState() {
-		// Get all sections
-		const sections = document.querySelectorAll('section[id]');
-		let current = '';
-		const scrollPosition = window.scrollY + 100;
-		
-		// Find which section is currently in view
-		sections.forEach(section => {
-			const sectionTop = section.offsetTop;
-			const sectionHeight = section.offsetHeight;
-			
-			if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-				current = section.getAttribute('id');
-			}
-		});
-		
-		// Update mobile menu active state
-		mobileNavLinks.forEach(link => {
-			link.classList.remove('active');
-			if (link.getAttribute('data-section') === current) {
-				link.classList.add('active');
-			}
-		});
+		updateActiveNavLinks();
 	}
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="es">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Alexander Narváez</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,11 +58,18 @@
 		</div>
 	</div>
 	
-	<!-- Dark Mode Toggle -->
-	<div class="dark-mode-toggle">
-		<button id="darkModeToggle" class="toggle-btn">
-			<i class="ion-ios-sunny"></i>
-		</button>
+	<!-- Site Controls: Language + Dark Mode -->
+	<div class="site-controls">
+		<div class="lang-toggle">
+			<button id="langToggle" class="toggle-btn lang-btn" type="button" aria-label="Cambiar idioma">
+				<span id="langToggleLabel">EN</span>
+			</button>
+		</div>
+		<div class="dark-mode-toggle">
+			<button id="darkModeToggle" class="toggle-btn" type="button" aria-label="Cambiar tema">
+				<i class="ion-ios-sunny"></i>
+			</button>
+		</div>
 	</div>
 	
 	<!-- Mobile Menu Button -->
@@ -76,13 +83,13 @@
 	<div class="mobile-nav-overlay" id="mobileNavOverlay">
 		<nav class="mobile-nav">
 			<ul class="mobile-nav-list">
-				<li><a href="#intro" class="mobile-nav-link" data-section="intro">Inicio</a></li>
-				<li><a href="#about" class="mobile-nav-link" data-section="about">Sobre mí</a></li>
-				<li><a href="#skills" class="mobile-nav-link" data-section="skills">Habilidades</a></li>
-				<li><a href="#experience" class="mobile-nav-link" data-section="experience">Experiencia</a></li>
-				<li><a href="#portfolio" class="mobile-nav-link" data-section="portfolio">Portafolio</a></li>
-				<li><a href="#education" class="mobile-nav-link" data-section="education">Educación</a></li>
-				<li><a href="#contact" class="mobile-nav-link" data-section="contact">Contáctame</a></li>
+				<li><a href="#intro" class="mobile-nav-link" data-section="intro" data-i18n="nav_home">Inicio</a></li>
+				<li><a href="#about" class="mobile-nav-link" data-section="about" data-i18n="nav_about">Sobre mí</a></li>
+				<li><a href="#skills" class="mobile-nav-link" data-section="skills" data-i18n="nav_skills">Habilidades</a></li>
+				<li><a href="#experience" class="mobile-nav-link" data-section="experience" data-i18n="nav_experience">Experiencia</a></li>
+				<li><a href="#portfolio" class="mobile-nav-link" data-section="portfolio" data-i18n="nav_portfolio">Portafolio</a></li>
+				<li><a href="#education" class="mobile-nav-link" data-section="education" data-i18n="nav_education">Educación</a></li>
+				<li><a href="#contact" class="mobile-nav-link" data-section="contact" data-i18n="nav_contact">Contáctame</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -90,13 +97,13 @@
 	<!-- Floating Navigation (Desktop) -->
 	<nav class="floating-nav desktop-nav">
 		<ul class="nav-list">
-			<li><a href="#intro" class="nav-link active" data-section="intro">Inicio</a></li>
-			<li><a href="#about" class="nav-link" data-section="about">Sobre mí</a></li>
-			<li><a href="#skills" class="nav-link" data-section="skills">Habilidades</a></li>
-			<li><a href="#experience" class="nav-link" data-section="experience">Experiencia</a></li>
-			<li><a href="#portfolio" class="nav-link" data-section="portfolio">Portafolio</a></li>
-			<li><a href="#education" class="nav-link" data-section="education">Educación</a></li>
-			<li><a href="#contact" class="nav-link" data-section="contact">Contáctame</a></li>
+			<li><a href="#intro" class="nav-link active" data-section="intro" data-i18n="nav_home">Inicio</a></li>
+			<li><a href="#about" class="nav-link" data-section="about" data-i18n="nav_about">Sobre mí</a></li>
+			<li><a href="#skills" class="nav-link" data-section="skills" data-i18n="nav_skills">Habilidades</a></li>
+			<li><a href="#experience" class="nav-link" data-section="experience" data-i18n="nav_experience">Experiencia</a></li>
+			<li><a href="#portfolio" class="nav-link" data-section="portfolio" data-i18n="nav_portfolio">Portafolio</a></li>
+			<li><a href="#education" class="nav-link" data-section="education" data-i18n="nav_education">Educación</a></li>
+			<li><a href="#contact" class="nav-link" data-section="contact" data-i18n="nav_contact">Contáctame</a></li>
 		</ul>
 	</nav>
 	
@@ -111,8 +118,8 @@
 								<ion-icon name="code-slash"></ion-icon>
 							</i>
 							<div class="right-area">
-								<h5>WEB DEVELOPMENT</h5>
-								<h5>FULL STACK</h5>
+								<h5 data-i18n="intro_web_1">WEB DEVELOPMENT</h5>
+								<h5 data-i18n="intro_web_2">FULL STACK</h5>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -123,8 +130,8 @@
 								<ion-icon name="color-palette"></ion-icon>
 							</i>
 							<div class="right-area">
-								<h5>UI/UX DESIGNING</h5>
-								<h5>CREATIVE DESIGN</h5>
+								<h5 data-i18n="intro_ui_1">UI/UX DESIGNING</h5>
+								<h5 data-i18n="intro_ui_2">CREATIVE DESIGN</h5>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -135,8 +142,8 @@
 								<ion-icon name="logo-android"></ion-icon>
 							</i>
 							<div class="right-area">
-								<h5>APP DEVELOPMENT</h5>
-								<h5>MOBILE & WEB APPS</h5>
+								<h5 data-i18n="intro_app_1">APP DEVELOPMENT</h5>
+								<h5 data-i18n="intro_app_2">MOBILE & WEB APPS</h5>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -156,7 +163,7 @@
 							<h4 class="font-yellow typing-effect"></h4>
 							<br>
 							<ul class="information margin-tb-30">
-								<li><b class="font-yellow">EXPERIENCIA</b> : +5 Años</li>
+								<li><b class="font-yellow" data-i18n="intro_experience_label">EXPERIENCIA</b> : <span data-i18n="intro_experience_value">+5 Años</span></li>
 							</ul>
 							<br>
 							<ul class="social-icons">
@@ -168,7 +175,7 @@
 					</div><!-- col-sm-8 -->
 					
 					<div class="col-sm-10 col-md-3 col-lg-3">
-						<a class="downlad-btn" target="_blank" href="files/CV.pdf">Descargar CV</a>
+						<a class="downlad-btn" target="_blank" href="files/CV.pdf" data-i18n="btn_download_cv">Descargar CV</a>
 					</div><!-- col-lg-2 -->
 			
 				</div><!-- row -->
@@ -183,12 +190,12 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Sobre mí</b></h3>
-						<h6 class="font-lite-black"><b>VISIÓN PROFESIONAL</b></h6>
+						<h3><b data-i18n="about_title">Sobre mí</b></h3>
+						<h6 class="font-lite-black"><b data-i18n="about_subtitle">VISIÓN PROFESIONAL</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 				<div class="col-sm-12 col-md-9">
-					<p class="margin-b-50">Soy una persona preocupada por las facetas del proceso de desarrollo de software, incluyendo el análisis, el diseño, la programación y las pruebas de software. Desarrollando programas que sean rápidos, versátiles y eficientes, cuyo objetivo es hacer que el software funcione de manera más eficiente. Me gusta trabajar en equipo, aprender y compartir conocimientos.
+					<p class="margin-b-50" data-i18n="about_text">Soy una persona preocupada por las facetas del proceso de desarrollo de software, incluyendo el análisis, el diseño, la programación y las pruebas de software. Desarrollando programas que sean rápidos, versátiles y eficientes, cuyo objetivo es hacer que el software funcione de manera más eficiente. Me gusta trabajar en equipo, aprender y compartir conocimientos.
 					Me considero una persona reflexiva ante las nuevas metodologías, con alto sentido de pertenencia y manejo de información de datos, contribuyendo al logro de metas corporativas y un mejor desempeño.
 					</p>					
 					</div><!-- row -->
@@ -202,8 +209,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Habilidades</b></h3>
-						<h6 class="font-lite-black"><b>MISIÓN PROFESIONAL</b></h6>
+						<h3><b data-i18n="skills_title">Habilidades</b></h3>
+						<h6 class="font-lite-black"><b data-i18n="skills_subtitle">MISIÓN PROFESIONAL</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 				<div class="col-sm-12 col-md-9">					
@@ -291,8 +298,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Experiencia Laboral</b></h3>
-						<h6 class="font-lite-black"><b>TRABAJOS ANTERIORES</b></h6>
+						<h3><b data-i18n="experience_title">Experiencia Laboral</b></h3>
+						<h6 class="font-lite-black"><b data-i18n="experience_subtitle">TRABAJOS ANTERIORES</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 				
@@ -305,11 +312,11 @@
 						<img src="https://s6-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/213/700/original/Greenhouse-FLYR-Logo-1920x1080.png?1695331055" alt="" style="width: 12rem;"></a>
 						<br>
 						<br>
-						<h5 class="font-yellow"><b>SOFTWARE ENGINEER</b></h5>
-						<h6 class="font-lite-black margin-t-10">Octubre 2022 - Junio 2026</h6>
+						<h5 class="font-yellow"><b data-i18n="exp1_role">SOFTWARE ENGINEER</b></h5>
+						<h6 class="font-lite-black margin-t-10" data-i18n="exp1_date">Octubre 2022 - Junio 2026</h6>
 						
 						<ul class="list">
-							<li>SAN FRANCISCO - CALIFORNIA | En remoto</li>
+							<li data-i18n="exp1_location">SAN FRANCISCO - CALIFORNIA | En remoto</li>
 						</ul>
 					</div>
 
@@ -320,11 +327,11 @@
 						<img src="https://adagetech.com/media/3bmbgpbd/adagebluelogo.svg" alt="" style="width: 12rem;"></a>
 						<br>
 						<br>
-						<h5 class="font-yellow"><b>SOFTWARE DEVELOPER</b></h5>
-						<h6 class="font-lite-black margin-t-10">Mayo 2021 - Mayo 2022</h6>
+						<h5 class="font-yellow"><b data-i18n="exp2_role">SOFTWARE DEVELOPER</b></h5>
+						<h6 class="font-lite-black margin-t-10" data-i18n="exp2_date">Mayo 2021 - Mayo 2022</h6>
 						
 						<ul class="list">
-							<li>MEDELLÍN - ANTIOQUIA | En remoto</li>
+							<li data-i18n="exp2_location">MEDELLÍN - ANTIOQUIA | En remoto</li>
 						</ul>
 					</div>
 
@@ -335,11 +342,11 @@
 						<img src="https://soporte.seguriserver.com/logo.php" alt="" style="width: 13rem;"></a>
 						<br>
 						<br>
-						<h5 class="font-yellow"><b>DESARROLLADOR JUNIOR</b></h5>
-						<h6 class="font-lite-black margin-t-10">Septiembre 2020 - Enero 2021</h6>
+						<h5 class="font-yellow"><b data-i18n="exp3_role">DESARROLLADOR JUNIOR</b></h5>
+						<h6 class="font-lite-black margin-t-10" data-i18n="exp3_date">Septiembre 2020 - Enero 2021</h6>
 						
 						<ul class="list">
-							<li>ENVIGADO - ANTIOQUIA | Presencial</li>
+							<li data-i18n="exp3_location">ENVIGADO - ANTIOQUIA | Presencial</li>
 						</ul>
 					</div>
 		
@@ -350,11 +357,11 @@
 						<img src="https://helpcenter.seguriserver.com/images/products/swebsas.webp" alt="" style="width: 14rem;"></a>
 						<br>
 						<br>
-						<h5 class="font-yellow"><b>DESARROLLADOR WEB</b></h5>
-						<h6 class="font-lite-black margin-t-10">Noviembre 2018 - Agosto 2020</h6>
+						<h5 class="font-yellow"><b data-i18n="exp4_role">DESARROLLADOR WEB</b></h5>
+						<h6 class="font-lite-black margin-t-10" data-i18n="exp4_date">Noviembre 2018 - Agosto 2020</h6>
 						
 						<ul class="list">
-							<li>ENVIGADO - ANTIOQUIA | Presencial</li>
+							<li data-i18n="exp4_location">ENVIGADO - ANTIOQUIA | Presencial</li>
 						</ul>
 					</div>
 
@@ -365,11 +372,11 @@
 						<img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Logo_Emtelco.png" alt="" style="width: 9rem;"></a>
 						<br>
 						<br>
-						<h5 class="font-yellow"><b>SOPORTE TÉCNICO</b></h5>
-						<h6 class="font-lite-black margin-t-10">Febrero 2016 - Septiembre 2018</h6>
+						<h5 class="font-yellow"><b data-i18n="exp5_role">SOPORTE TÉCNICO</b></h5>
+						<h6 class="font-lite-black margin-t-10" data-i18n="exp5_date">Febrero 2016 - Septiembre 2018</h6>
 						
 						<ul class="list">
-							<li>MEDELLÍN - ANTIOQUIA | Presencial</li>
+							<li data-i18n="exp5_location">MEDELLÍN - ANTIOQUIA | Presencial</li>
 						</ul>
 					</div>
 					
@@ -383,8 +390,8 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<i class="icon ion-quote"></i>
-					<h3 class="font-yellow"><b>No hay secreto para el éxito</b></h3>
-					<h3><b>Es el resultado de preparación, <span class="font-yellow">perseverancia</span>
+					<h3 class="font-yellow"><b data-i18n="quote_title">No hay secreto para el éxito</b></h3>
+					<h3 data-i18n-html="quote_body"><b>Es el resultado de preparación, <span class="font-yellow">perseverancia</span>
 					y aprender de los errores.</b></h3>
 				</div><!-- col-sm-12 -->
 			</div><!-- row -->
@@ -396,8 +403,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Portafolio</b></h3>
-						<h6 class="font-lite-black"><b>MI TRABAJO</b></h6>
+						<h3><b data-i18n="portfolio_title">Portafolio</b></h3>
+						<h6 class="font-lite-black"><b data-i18n="portfolio_subtitle">MI TRABAJO</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 				
@@ -444,8 +451,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Educación</b></h3>
-						<h6 class="font-lite-black"><b>CARRERA ACADÉMICA</b></h6>
+						<h3><b data-i18n="education_title">Educación</b></h3>
+						<h6 class="font-lite-black"><b data-i18n="education_subtitle">CARRERA ACADÉMICA</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 				
@@ -453,34 +460,34 @@
 				
 					<div class="education-wrapper">
 						<div class="education margin-b-50">
-							<h4><b>TECNOLOGÍA EN DESARROLLO DE SOFTWARE Y APLICATIVOS MÓVILES</b></h4>
+							<h4><b data-i18n="edu1_title">TECNOLOGÍA EN DESARROLLO DE SOFTWARE Y APLICATIVOS MÓVILES</b></h4>
 							<h5 class="font-yellow"><b>POLITÉCNICO INTERNACIONAL</b></h5>
-							<h6 class="font-lite-black margin-t-10">2026 - Actualidad</h6>
+							<h6 class="font-lite-black margin-t-10" data-i18n="edu1_date">2026 - Actualidad</h6>
 							
 							
 						</div><!-- education -->
 
 						<div class="education margin-b-50">
-							<h4><b>TÉCNICO LABORAL EN SISTEMAS</b></h4>
+							<h4><b data-i18n="edu2_title">TÉCNICO LABORAL EN SISTEMAS</b></h4>
 							<h5 class="font-yellow"><b>CEINFOS</b></h5>
 							<h6 class="font-lite-black margin-t-10">2004 - 2005</h6>
-							<a class="downlad-btn" target="_blank" href="files/Ceinfos.pdf">Descargar Certificado</a>
+							<a class="downlad-btn" target="_blank" href="files/Ceinfos.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 							
 						</div><!-- education -->
 						
 						<div class="education margin-b-50">
-							<h4><b>BACHILLER ACADÉMICO</b></h4>
+							<h4><b data-i18n="edu3_title">BACHILLER ACADÉMICO</b></h4>
 							<h5 class="font-yellow"><b>COLEGIO EDUCAR</b></h5>
 							<h6 class="font-lite-black margin-t-10">2003 - 2008</h6>
-							<a class="downlad-btn" target="_blank" href="files/diploma-bachiller.pdf">Descargar Certificado</a>
+							<a class="downlad-btn" target="_blank" href="files/diploma-bachiller.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 							
 						</div><!-- education -->
 						
 						<div class="education margin-b-50">
-							<h4><b>BÁSICA PRIMARIA</b></h4>
+							<h4><b data-i18n="edu4_title">BÁSICA PRIMARIA</b></h4>
 							<h5 class="font-yellow"><b>INSTITUCIÓN EDUCATIVA GABRIEL GARCÍA MARQUEZ</b></h5>
 							<h6 class="font-lite-black margin-t-10">1997 - 2002</h6>
-							<a class="downlad-btn" href="#">Descargar Certificado</a>
+							<a class="downlad-btn" href="#" data-i18n="btn_download_cert">Descargar Certificado</a>
 							
 						</div><!-- education -->
 					</div><!-- education-wrapper -->
@@ -492,8 +499,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Cursos</b></h3>
-						<h6 class="font-lite-black"><b>FORMACIÓN PARTICULAR</b></h6>
+						<h3><b data-i18n="courses_title">Cursos</b></h3>
+						<h6 class="font-lite-black"><b data-i18n="courses_subtitle">FORMACIÓN PARTICULAR</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 				
@@ -501,82 +508,82 @@
 				
 					<div class="education-wrapper">
 						<div class="education margin-b-50">
-							<h4><b>INTERNET Y ESTRATEGIAS DE DISEÑO DE PÁGINAS WEB</b></h4>
+							<h4><b data-i18n="course1_title">INTERNET Y ESTRATEGIAS DE DISEÑO DE PÁGINAS WEB</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://www.politecnicointercontinental.com/"><b>POLITÉCNICO INTERCONTINENTAL</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/Intercontinental.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/Intercontinental.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
-							<h4><b>PROGRAMACIÓN EN PHP</b></h4>
+							<h4><b data-i18n="course2_title">PROGRAMACIÓN EN PHP</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://politecnicodecolombia.edu.co/"><b>POLITÉCNICO DE COLOMBIA</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/Policolombia.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/Policolombia.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
-							<h4><b>DESARROLLO WEB</b></h4>
+							<h4><b data-i18n="course3_title">DESARROLLO WEB</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://www.udemy.com/"><b>UDEMY</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/Desarrollo-Web.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/Desarrollo-Web.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>JAVASCRIPT</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://www.udemy.com/"><b>UDEMY</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/JavaScript.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/JavaScript.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>PHP & MySQL</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://www.udemy.com/"><b>UDEMY</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/PHP.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/PHP.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>LARAVEL</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://www.udemy.com/"><b>UDEMY</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/Laravel.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/Laravel.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>C# & .NET</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://platzi.com/"><b>PLATZI</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/diploma-c-sharp.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/diploma-c-sharp.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>ASP.NET CORE</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://platzi.com/"><b>PLATZI</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/diploma-aspnet-core.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/diploma-aspnet-core.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>ANGULAR</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://platzi.com/"><b>PLATZI</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/diploma-angular.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/diploma-angular.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
-							<h4><b>BASES DE DATOS</b></h4>
+							<h4><b data-i18n="course10_title">BASES DE DATOS</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://platzi.com/"><b>PLATZI</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/diploma-bd.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/diploma-bd.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>GIT & GITHUB</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://platzi.com/"><b>PLATZI</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/diploma-git-github.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/diploma-git-github.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>API REST</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://platzi.com/"><b>PLATZI</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/diploma-api-rest.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/diploma-api-rest.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						<div class="education margin-b-50">
 							<h4><b>.NET & ANGULAR</b></h4>
 							<h5><a class="downlad-btn font-yellow" target="_blank" href="https://mitocode.com/"><b>MITOCODE</b></a></h5>
-							<h6 class="font-lite-black margin-t-10">VIRTUAL</h6>
-							<a class="downlad-btn" target="_blank" href="files/Net-Angular.pdf">Descargar Certificado</a>
+							<h6 class="font-lite-black margin-t-10" data-i18n="label_virtual">VIRTUAL</h6>
+							<a class="downlad-btn" target="_blank" href="files/Net-Angular.pdf" data-i18n="btn_download_cert">Descargar Certificado</a>
 						</div>
 						
 					</div><!-- education-wrapper -->
@@ -591,8 +598,8 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Contáctame</b></h3>
-						<h6 class="font-lite-black"><b>¿Tienes un proyecto en mente? ¡Hablemos!</b></h6>
+						<h3><b data-i18n="contact_title">Contáctame</b></h3>
+						<h6 class="font-lite-black"><b data-i18n="contact_subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 				
@@ -601,12 +608,12 @@
 						<!-- Quick Contact Section -->
 						<div class="quick-contact-section">
 							<div class="quick-header">
-								<h4>💬 Contáctame directamente</h4>
-								<p>Elige tu método preferido de comunicación</p>
+								<h4 data-i18n="contact_direct">💬 Contáctame directamente</h4>
+								<p data-i18n="contact_choose">Elige tu método preferido de comunicación</p>
 							</div>
 							
 							<div class="quick-buttons">
-								<a href="mailto:alexjw2009@outlook.com?subject=Hola%20desde%20tu%20portafolio&body=Hola%20Alex,%20me%20interesa%20tu%20trabajo..." class="quick-btn email-btn">
+								<a id="contactEmailBtn" href="mailto:alexjw2009@outlook.com?subject=Hola%20desde%20tu%20portafolio&body=Hola%20Alex,%20me%20interesa%20tu%20trabajo..." class="quick-btn email-btn">
 									<div class="quick-icon">
 										<i class="ion-email"></i>
 									</div>
@@ -615,7 +622,7 @@
 									</div>
 								</a>
 								
-								<a href="https://wa.me/573013739383?text=Hola%20Alex,%20vi%20tu%20portafolio%20y%20me%20interesa%20tu%20trabajo..." class="quick-btn whatsapp-btn" target="_blank">
+								<a id="contactWhatsappBtn" href="https://wa.me/573013739383?text=Hola%20Alex,%20vi%20tu%20portafolio%20y%20me%20interesa%20tu%20trabajo..." class="quick-btn whatsapp-btn" target="_blank">
 									<div class="quick-icon">
 										<i class="ion-social-whatsapp"></i>
 									</div>
@@ -627,7 +634,7 @@
 							
 							<!-- Redes Sociales -->
 							<div class="social-section">
-								<h5>📱 Sígueme en redes sociales</h5>
+								<h5 data-i18n="contact_social">📱 Sígueme en redes sociales</h5>
 								<ul class="social-icons">
 									<li><a target="_blank" href="https://www.linkedin.com/in/alexskydev/"><i class="ion-social-linkedin"></i></a></li>
 									<li><a target="_blank" href="https://www.instagram.com/alexskydev/"><i class="ion-social-instagram"></i></a></li>
@@ -645,7 +652,7 @@
 	<footer>
 		<p class="copyright">
 			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			Development by Alexander Narváez | Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados</a>
+			Development by Alexander Narváez | Copyright &copy;<script>document.write(new Date().getFullYear());</script> <span data-i18n="footer_rights">Todos los derechos reservados</span></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 		</p>
 	</footer>
@@ -659,6 +666,7 @@
 	<script src="js/progressbar.min.js"></script>
 	<script src="js/jquery.fluidbox.min.js"></script>
 	<script src="js/scripts.js"></script>
+	<script src="js/i18n.js"></script>
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	
